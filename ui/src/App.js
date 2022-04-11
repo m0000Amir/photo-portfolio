@@ -12,13 +12,17 @@ function App() {
   const [posts, setPosts] = useState([]);
   let item_id = 1;
   useEffect(() => {
-    fetch(BASE_URL+`/items`)
+    fetch(BASE_URL)
         .then(response => {
           if (response.ok) {
+            console.log("done!");
             return response.json
+            
           }
           throw response
         })
+      
+      
 
     .catch(error => {
       console.log(error);
